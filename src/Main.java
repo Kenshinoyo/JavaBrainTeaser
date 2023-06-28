@@ -1,17 +1,39 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.Scanner;
 public class Main {
+
+    private static final Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        /* - Goal: Find a more DRY way to write an if else statement that checks for multiple
+        * conditions, while using a scanner.
+        *
+        * **Ideal Solution**: Shorthand if else statement
+        */
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        // - First Draft of code
+        System.out.println("Please enter a number.");
+        int N = scanner.nextInt(); //<--Checks user input
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+
+        // - Conditional statement to check against user int
+
+        // - "Not Weird" output printed if user int is even and between 2-5, or greater than 20
+        // - "Weird" output printed if user int is odd, or even and between 6-20
+//        if (N%2 == 0 && 2<=N && N<=5 || N%2 == 0 && 20<N) {
+//            System.out.println("Not Weird");
+//        } else if(N%2==0 && 6<=N && N<=20) {
+//            System.out.println("Weird");
+//        } else{
+//            System.out.println("Weird");
+//        }
+
+        //- Possible solutions: Shorthand, switch
+
+        //*Shorthand*
+        String status = (N%2 == 0 && 2<=N && N<=5 || N%2 == 0 && 20<N) ? "Not Weird" : "Weird";
+        System.out.println(status);
+
+
+        scanner.close();
     }
 }
