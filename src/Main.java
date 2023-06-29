@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class Main {
 
-    private static final Scanner scanner = new Scanner(System.in);
+//    private static final
     public static void main(String[] args) {
         /* - Goal: Find a more DRY way to write an if else statement that checks for multiple
         * conditions, while using a scanner.
@@ -9,7 +9,7 @@ public class Main {
         * **Ideal Solution**: Shorthand if else statement
         */
 
-
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter a number.");
         int N = scanner.nextInt(); //<--Checks user input
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
@@ -19,7 +19,8 @@ public class Main {
 
         // - "Not Weird" output printed if user int is even and between 2-5, or greater than 20
         // - "Weird" output printed if user int is odd, or even and between 6-20
-//      // - First Draft of code
+//
+// - First Draft of code
 //          if (N%2 == 0 && 2<=N && N<=5 || N%2 == 0 && 20<N) {
 //            System.out.println("Not Weird");
 //        } else if(N%2==0 && 6<=N && N<=20) {
